@@ -61,7 +61,7 @@ export default function Signup() {
                 <p>By signing up I agree to the <span className='text-blue-800'>terms & conditions</span> and <span className='text-blue-800'>privacy policy</span></p>
               </div>
               <div className='flex flex-col justify-center items-center'>
-                <p className='bg-slate-200 text-center text-sm px-4 py-1 rounded-md sm:w-1/2'>Already a user? <span className='text-blue-700'><Link to={""}>Log in</Link></span></p>
+                <p className='bg-slate-200 text-center text-sm px-4 py-1 rounded-md sm:w-1/2'>Already a user? <span className='text-blue-700'><Link to={"/guest/login"}>Log in</Link></span></p>
               </div>
             </div>
           </form>

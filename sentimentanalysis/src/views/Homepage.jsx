@@ -17,7 +17,7 @@ export default function Homepage() {
             <div className='flex flex-row sm justify-between space-x-2'>
                 <div>
                     <Link 
-                    to={"/login"}
+                    to={"/guest/login"}
                     className='px-3 sm:px-8 py-0 sm:py-1 rounded-md capitalize text-xs sm:text-base text-black hover:text-white hover:bg-blue-700 transition duration-300 ease-in-out'>login</Link>
                 </div>
                 <div>
@@ -43,7 +43,7 @@ export default function Homepage() {
                     </ul>
                 </div>
                 <div>
-                    <Link to={""} className='bg-blue-700 hover:bg-blue-500 text-white text-xs sm:text-base px-4 sm:px-8 py-1 sm:py-2 rounded-md transition duration-300 ease-in-out'>Get started</Link>
+                    <Link to={"/guest/signup"} className='bg-blue-700 hover:bg-blue-500 text-white text-xs sm:text-base px-4 sm:px-8 py-1 sm:py-2 rounded-md transition duration-300 ease-in-out'>Get started</Link>
                 </div>
             </div>
             <div className='sm:pt-20'>

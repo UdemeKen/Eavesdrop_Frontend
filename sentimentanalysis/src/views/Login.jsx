@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import Logo from '../assets/EavesLogo.png';
 import { Link } from 'react-router-dom';
+import  Facebookicon from '../assets/facebookicon.png';
+import  Googleicon from '../assets/googleicon.png';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import { LockClosedIcon } from '@heroicons/react/24/solid';
 
@@ -46,11 +47,11 @@ export default function Login() {
                   <h2 className='font-semibold'>or</h2>
                 </div>
                 <div className='flex flex-col justify-center space-y-4'>
-                  <div className='flex justify-center space-x-2 border-2 border-blue-800 rounded-md w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i>icon</i></span><p>Log in with Google</p></div>
-                  <div className='flex justify-center space-x-2 border-2 border-blue-800 rounded-md w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i>icon</i></span><p>Log in with Facebook</p></div>
+                  <div className='flex justify-center items-center space-x-2 border-2 border-blue-800 rounded-md w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i><img src={Googleicon} alt='googleicon' className='w-6 h-6'/></i></span><p>Log in with Google</p></div>
+                  <div className='flex justify-center items-center space-x-2 border-2 border-blue-800 rounded-md w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i><img src={Facebookicon} alt='googleicon' className='w-6 h-6'/></i></span><p>Log in with Facebook</p></div>
                 </div>
                 <div className='text-xs font-semibold text-center'>
-                  <p>You don’t have an account yet? <span className='text-blue-800'><Link to={"/signup"}>Create one!</Link></span></p>
+                  <p>You don’t have an account yet? <span className='text-blue-800'><Link to={"/guest/signup"}>Create one!</Link></span></p>
                 </div>
               </div>
           </form>

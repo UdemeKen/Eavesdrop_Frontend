@@ -16,12 +16,12 @@ export default function GuestLayout() {
           <div className='flex flex-row sm justify-between space-x-2'>
             <div>
                 <Link 
-                to={"/login"}
+                to={"/guest/login"}
                 className='border-2 border-blue-700 px-3 sm:px-8 py-0 sm:py-1 rounded-md capitalize text-xs sm:text-base text-black hover:text-white hover:bg-blue-700 transition duration-300 ease-in-out'>login</Link>
             </div>
             <div>
                 <Link 
-                to={""}
+                to={"/guest/signup"}
                 className='bg-blue-700 hover:bg-blue-500 px-3 sm:px-6 py-1 rounded-md text-white text-xs sm:text-base transition duration-300 ease-in-out'>sign up</Link>
             </div>
           </div>
