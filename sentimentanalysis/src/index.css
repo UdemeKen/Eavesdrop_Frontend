@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.next-mt {
+  margin-top: 8.2rem;
+}
+.header-h{
+    height: 4em;
+}
