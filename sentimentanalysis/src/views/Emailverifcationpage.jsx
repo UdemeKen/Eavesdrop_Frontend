@@ -14,7 +14,7 @@ export default function Emailverifcationpage() {
             <p className='text-center font-semibold text-blue-700 mt-10 px-2 sm:px-0'>Congratulations, Udeme! Your email has been successfully verified.</p>
             <div className='flex justify-center my-10'>
               <Link
-                to={"/login"} 
+                to={"/guest/login"} 
                 className='capitalize text-center text-white font-semibold bg-blue-700 hover:bg-blue-500 rounded-md px-4 py-1 transition duration-300 ease-in-out'
               >
                 login
