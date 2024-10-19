@@ -9,7 +9,7 @@ export default function Signup() {
   return (
     <div className='my-10'>
       <div className='flex justify-center mx-4 my-10'>
-        <div className='border-2 border-black rounded-xl w-full sm:w-2/5 h-full sm:mx-0'>
+        <div className='shadow shadow-slate-500 rounded-xl w-full sm:w-2/5 h-full sm:mx-0'>
           <form>
             <div className='flex flex-col justify-center mx-8 my-10 space-y-8'>
               <div className="flex space-x-4 border-b-2 border-b-black w-full">

@@ -5,16 +5,21 @@ import { Disclosure } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon, } from '@heroicons/react/24/outline';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { HiMenuAlt3 } from "react-icons/hi";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { UserIcon } from '@heroicons/react/24/solid';
+import { FiLoader, FiLogOut } from 'react-icons/fi';
 
 export default function DefaultLayout() {
 
   const location = useLocation();
+
+  const [ toggler, setToggler ] = useState();
+
+  const handleToggler = () => {
+    setToggler(prev => !prev);
+  }
   
   const [mobileNavbarOpen, setMobileNavbarOpen] = useState(false);
+
   const navigateAndCloseNavbar = (link) => {
     setMobileNavbarOpen(false);
     navigate(link);
@@ -27,25 +32,22 @@ export default function DefaultLayout() {
       <Disclosure as="nav" className="">
       {({ open }) => (
       <>
-      <div className='flex flex-row justify-between items-center capitalize m-2 sm:mx-4'>
+      <div className='flex flex-row justify-between items-center capitalize p-3'>
           <Link to={"/homepage"}>
               <img 
                   src={Logo} 
                   alt='Logo'
-                  className='w-20 sm:w-32 h-10 sm:h-16'
+                  className='w-20 sm:w-24 h-10 sm:h-12'
               />
           </Link>
-          <div className='flex flex-row sm justify-between items-center space-x-2'>
-            <div className='hidden sm:block'>
-                <div 
-                to={""}
-                className='bg-blue-900 sm:p-2 rounded-full uppercase font-semibold text-2xl text-white'>uk</div>
+          <div className='flex flex-col sm justify-between items-center space-x-2 relative'>
+            <div className='hidden sm:block' onClick={handleToggler}>
+                <div className='bg-blue-900 sm:p-2 rounded-full uppercase font-semibold text-2xl text-white cursor-pointer'>uk</div>
             </div>
-            <div className='hidden sm:block'>
-                <p 
-                to={"/guest/signup"}
-                className='bg-blue-900 px-3 sm:px-6 py-1 rounded-2xl text-white text-xs sm:text-base transition duration-300 ease-in-out'>udeme kendrick</p>
-            </div>
+            <ul className={`flex flex-col justify-center gap-3 absolute top-[4rem] -right-[50px] w-[10rem] bg-blue-900 text-white rounded-md transition-transform duration-300 p-2 ${toggler ? "-translate-x-[50px]" : "-translate-x-full opacity-0 pointer-events-none"}`}>
+              <Link to={''} className='hover:bg-blue-800 p-2 rounded-md transform duration-300 ease-in-out'><li className={`transition-opacity duration-300 flex gap-2 ${toggler ? "opacity-100" : "opacity-0"}`}><span><UserIcon className='w-5 h-5' /></span>user account</li></Link>
+              <Link to={''} className='hover:bg-blue-800 p-2 rounded-md transform duration-300 ease-in-out'><li className={`transition-opacity duration-300 flex gap-2 ${toggler ? "opacity-100" : "opacity-0"}`}><span><FiLogOut className='w-5 h-5' /></span>log out</li></Link>
+            </ul>
           </div>
           <div className="flex md:hidden">
             {/* Mobile menu button */}
@@ -66,17 +68,7 @@ export default function DefaultLayout() {
                   <Disclosure.Button
                     key={index}
                     to={item.link}
-                    className={({ isActive }) => classNames(
-                    index === 1
-                    ? location.pathname === "/historylayout/billhistory" || location.pathname === "/historylayout/paymenthistory"
-                    ? 'flex p-2 cursor-pointer bg-gray-300 items-center gap-x-4 mt-8 text-orange-500'
-                    : 'flex rounded-md p-2 cursor-pointer hover:bg-gray-300 duration-200 ease-in-out text-blue-900 text-sm items-center gap-x-4 mt-8'
-                    : isActive
-                    ? 'flex p-2 cursor-pointer bg-gray-300 items-center gap-x-4 mt-8 text-orange-500'
-                    : 'flex rounded-md p-2 cursor-pointer hover:bg-gray-300 duration-200 ease-in-out text-blue-900 text-sm items-center gap-x-4 mt-8',
-                    'rounded-md px-3 py-2 text-sm font-medium'
-                    )}
-                    onClick={() => navigateAndCloseNavbar(item.link)}
+                    className={""}
                     >
                     <div>{React.createElement(item?.icon, { size: "20" })}</div>
                     <span className={`${!open && "hidden"} origin-left duration-200 font-bold text-sm capitalize text-blue-900`}>
@@ -136,19 +128,7 @@ export default function DefaultLayout() {
               <NavLink
                 to={menu?.link}
                 key={i}
-                className={({ isActive }) => classNames(
-                  i === 1
-                    ? location.pathname === "/historylayout/billhistory" || location.pathname === "/historylayout/paymenthistory"
-                    ? 'flex p-2 cursor-pointer bg-gray-300 items-center gap-x-4 mt-8 text-orange-500'
-                    : 'flex rounded-md p-2 cursor-pointer hover:bg-gray-300 duration-200 ease-in-out text-blue-900 text-sm items-center gap-x-4 mt-8'
-                    : isActive
-                    ? 'flex p-2 cursor-pointer bg-gray-300 items-center gap-x-4 mt-8 text-orange-500'
-                    : 'flex rounded-md p-2 cursor-pointer hover:bg-gray-300 duration-200 ease-in-out text-blue-900 text-sm items-center gap-x-4 mt-8',
-                  "rounded-md px-3 py-2 text-sm font-medium"
-                )` ${
-                  menu?.margin && "mt-5"
-                } group flex items-center text-sm  gap-3.5 font-medium p-2 hover:bg-blue-500 rounded-md`}
-              >
+                className={`flex flex-row items-center gap-4 hover:bg-blue-800 p-2 rounded-md ${location.pathname === "/" && i === 0 ? "bg-blue-800 p-2 rounded-md" : ""}`}>
                 <div>{React.createElement(menu?.icon, { size: "20" })}</div>
                 <h2
                   style={{

@@ -10,7 +10,7 @@ export default function Login() {
   return (
     <div className='my-10'>
         <div className='flex justify-center mx-4 my-10'>
-          <div className='border-2 border-black rounded-xl w-full sm:w-2/5 h-full sm:mx-0'>
+          <div className='shadow-sm shadow-slate-500 rounded-xl w-full sm:w-2/5 h-full sm:mx-0'>
             <form>
               <div className='flex flex-col justify-center mx-8 my-10 space-y-8'>
                 <div className="flex space-x-4 border-b-2 border-b-black w-full">
@@ -47,8 +47,8 @@ export default function Login() {
                   <h2 className='font-semibold'>or</h2>
                 </div>
                 <div className='flex flex-col justify-center space-y-4'>
-                  <div className='flex justify-center items-center space-x-2 border-2 border-blue-800 rounded-md w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i><img src={Googleicon} alt='googleicon' className='w-6 h-6'/></i></span><p>Log in with Google</p></div>
-                  <div className='flex justify-center items-center space-x-2 border-2 border-blue-800 rounded-md w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i><img src={Facebookicon} alt='googleicon' className='w-6 h-6'/></i></span><p>Log in with Facebook</p></div>
+                  <div className='flex justify-center items-center space-x-2 w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i><img src={Googleicon} alt='googleicon' className='w-6 h-6'/></i></span><p>Log in with Google</p></div>
+                  <div className='flex justify-center items-center space-x-2 w-full text-center py-1 px-2 font-semibold text-gray-600 text-xs sm:text-base'><span><i><img src={Facebookicon} alt='googleicon' className='w-6 h-6'/></i></span><p>Log in with Facebook</p></div>
                 </div>
                 <div className='text-xs font-semibold text-center'>
                   <p>You don’t have an account yet? <span className='text-blue-800'><Link to={"/guest/signup"}>Create one!</Link></span></p>

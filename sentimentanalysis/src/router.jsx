@@ -14,14 +14,14 @@ const router = createBrowserRouter([
         path: '/homepage',
         element: <Homepage />
     },
-     {
-        path: '/successpage',
-        element: <Successpage />
-     },
-     {
-        path: '/emailverifcationpage',
-        element: <Emailverifcationpage />
-     },
+    {
+       path: '/successpage',
+       element: <Successpage />
+    },
+    {
+       path: '/emailverifcationpage',
+       element: <Emailverifcationpage />
+    },
     {
         path: '/guest',
         element: <GuestLayout />,
